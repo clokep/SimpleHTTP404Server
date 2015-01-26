@@ -15,17 +15,13 @@ class GitHubHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     """
     def do_GET(self):
         path = self.translate_path(self.path)
-        print(self.path)
-        print(path)
+
         # If the path doesn't exist, fake it to be the 404 page.
         if not os.path.exists(path):
             self.path = '404.html'
 
         # Call the superclass methods to actually serve the page.
         SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
-
-        print(self.path)
-        print(self.translate_path(self.path))
 
 
 SimpleHTTPServer.test(GitHubHandler)
