@@ -2,12 +2,12 @@ import os
 import SimpleHTTPServer
 
 
-class GitHubHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+class SimpleHTTP404RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     """
-    Overrides the default request handler to handle GitHub custom 404 pages.
-    (I.e. a 404.html page located in the root.)
-
-    See https://help.github.com/articles/custom-404-pages
+    Overrides the default request handler to handle custom 404 pages as 404.html
+    (i.e. a 404.html page located in the root). This behavior is seen on:
+        GitHub:     https://help.github.com/articles/custom-404-pages/
+        FastMail:   https://www.fastmail.com/help/files/website.html
 
     """
     def do_GET(self):
@@ -50,4 +50,4 @@ class GitHubHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    SimpleHTTPServer.test(GitHubHandler)
+    SimpleHTTPServer.test(SimpleHTTP404RequestHandler)
