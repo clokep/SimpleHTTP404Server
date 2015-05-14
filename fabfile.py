@@ -49,3 +49,8 @@ def upload(repository='test'):
     """Upload to test pypi."""
     local('python setup.py sdist upload -r %s' % repository)
     local('python setup.py bdist_wheel upload -r %s' % repository)
+
+
+@task
+def test():
+    local('python -m unittest discover tests')
