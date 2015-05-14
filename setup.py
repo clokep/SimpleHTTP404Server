@@ -10,7 +10,7 @@ def read(*paths):
 
 setup(
     name='SimpleHTTP404Server',
-    version='0.1.0',
+    version='0.1.1',
     description='A Python SimpleHTTPServer, but serves 404.html if a page is not found.',
     long_description=(read('README.rst')),
     url='http://github.com/clokep/SimpleHTTP404Server/',
