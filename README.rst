@@ -31,6 +31,7 @@ Or, if you'd like to specify a different port:
 And that's it! Now browse to a page that exists, maybe
 http://localhost:8000/index.html. And check that your 404.html page is properly
 loaded by checking a few different paths:
+
 * http://localhost:8000/404.html
 * http://localhost:8000/does-not-exist.html
 * http://localhost:8000/does/not/exist.html
